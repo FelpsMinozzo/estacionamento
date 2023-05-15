@@ -1,0 +1,17 @@
+{
+  "name": "trabalho-de-pwii",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Eduardo Felipe Gomes Renosto & Kauã Cazé Szczepanski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.3.0",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.1"
+  }
+}
