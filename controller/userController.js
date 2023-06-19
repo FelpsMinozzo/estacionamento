@@ -7,9 +7,13 @@ const router = express.Router();
 router.post('/usuario/inserir', (req,res)=>{
 
     let name_User = req.body.name_User;
+    let CPF_User = req.body.CPF_User;
+    let status_User = req.body.status_User;
     
     userModel.create(
-        {name_User}
+        {name_User,
+        CPF_User,
+        status_User}
     ).then(
         ()=>{
            return res.status(201).json({
@@ -49,9 +53,13 @@ router.put('/usuario/alterar', (req,res)=>{
 
     let id = req.body.id;
     let name_User = req.body.name_User;
+    let CPF_User = req.body.CPF_User;
+    let status_User = req.body.status_User;
 
     userModel.update(
-        {name_User},
+        {name_User,
+        CPF_User,
+        status_User},
         {where:{id}}
     ).then(
         ()=>{
