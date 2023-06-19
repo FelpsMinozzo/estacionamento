@@ -1,6 +1,7 @@
 const sequelize = require('sequelize');
 
 const connection = require('../database/database');
+const placas = require('./placasModel')
 
 const user = connection.define(
     'tbl_User',
@@ -19,6 +20,10 @@ const user = connection.define(
         }
     }
 );
+
+placas.hasMany(user);
+
+user.belongsTo(placas);
 
 //user.sync({force:true});
 

@@ -10,9 +10,15 @@ const router = express.Router();
 router.post('/carro/inserir', (req,res)=>{
 
     let placa_carro = req.body.placa_carro;
+    let marca_carro = req.body.marca_carro;
+    let modelo_carro = req.body.modelo_carro;
+    let ano_carro = req.body.ano_carro;
     
     categoriaModel.create(
-        {placa_carro}
+        {placa_carro,
+        marca_carro,
+        modelo_carro,
+        ano_carro}
     ).then(
         ()=>{
            return res.status(201).json({
@@ -55,9 +61,15 @@ router.put('/carros/alterar', (req,res)=>{
 
     let id = req.body.id;
     let placa_carro = req.body.placa_carro;
+    let marca_carro = req.body.marca_carro;
+    let modelo_carro = req.body.modelo_carro;
+    let ano_carro = req.body.ano_carro;
 
     placaModel.update(
-        {placa_carro},
+        {placa_carro,
+        marca_carro,
+        modelo_carro,
+        ano_carro},
         {where:{id}}
     ).then(
         ()=>{
